@@ -1,0 +1,178 @@
+body {
+    height: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#backBtn {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#myChart {
+  margin-top: 150px;
+}
+
+.updateMain {
+  width: 700px;
+  margin: auto !important;
+}
+
+.padding {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+p {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.athleteImg {
+  height: 400px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.athleteImg img {
+  /* width: 100%; */
+  height: 400px;
+}
+
+.athleteBox {
+  height: auto;
+}
+
+.athleteBox h2 {
+  text-align: center;
+}
+
+.athleteProfile {
+  /* display: flex; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #eaeced;
+}
+
+.athleteProfileImg {
+  width: 15%;
+}
+
+.athleteProfileImg img {
+  width: 100%;
+}
+
+.athleteProfileInfo {
+  width: 50%;
+}
+
+.statForm {
+  width: 50%;
+  margin: 50px auto;
+}
+
+.athleteStats {
+    margin-top: 50px;
+    border: 1px solid black;
+}
+
+.stat {
+  margin-bottom: 30px;
+}
+
+.athleteForm {
+  width: 40%;
+  margin: auto;
+}
+
+.loginForm {
+  width: 25%;
+}
+
+.show {
+  display: inline-block !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.editInput {
+  width: 50px;
+}
+
+i.large.icon:hover {
+  opacity: .5;
+}
+
+.tab-pane {
+  width: 100%;
+  overflow: auto;
+}
+
+.statContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statNotes {
+  background: red;
+  height: 100px;
+}
+
+.editBox {
+  width: 30px;
+}
+
+.statArchiveList {
+  list-style: none;
+}
+
+#athleteArchive {
+  width: 100%;
+}
+
+#athleteArchive .item {
+  cursor: pointer;
+  margin: 10px 0 10px 0;
+}
+
+#chosenAthlete {
+  text-align: center;
+}
+
+#personalInfo {
+  width: 50%;
+  margin: 25px auto;
+}
+
+#personalInfo input {
+  text-align: center;
+}
+
+#athleteStats {
+  width: 75%;
+  margin: auto;
+}
+
+#athleteStats input {
+  text-align: center;
+}
+
+#date {
+  margin-bottom: 15px;
+}
+
+#addNewContainer {
+  width: 80%;
+  margin: auto;
+}
+
+.addNew .field {
+  text-align: left;
+}

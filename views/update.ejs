@@ -1,0 +1,345 @@
+<% include partials/header %>
+
+  <h1>Update Stats/Athletes</h1>
+
+<div class="ui red segment center aligned updateMain">
+
+  <%# This is the content on the side where you choose the athlete %>
+  <div class="ui left rail">
+    <div class="ui segment">
+      <div class="ui form">
+        <div class="grouped fields">
+          <label for="athlete">Choose an athlete:</label>
+          <% athletes.forEach(function(athlete) { %>
+              <div class="field">
+                <div class="ui radio checkbox">
+                  <input type="radio" name="athlete" checked="" class="hidden" value="<%= athlete.name %>">
+                  <label><%= athlete.name %></label>
+                </div>
+              </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# This is where my main content goes. %>
+  <div class="ui basic segment">
+    <div class="ui image massive label">
+      <img id="athleteImg" src="http://suryanation.id/assets/img/profiels/unknown.png">
+      <span id="chosenAthlete">Choose an athlete on the left side.</span>
+    </div>
+  </div>
+  <div class="ui form">
+    <div id="personalInfo" class="disabled two fields">
+      <div class="field">
+        <label>Age</label>
+        <input id="athleteAge" type="text" value="">
+      </div>
+      <div class="field">
+        <label>Level</label>
+        <input id="athleteLvl" type="text" value="">
+      </div>
+    </div>
+    <%# <div class="ui submit button">Submit</div> %>
+</div>
+<div id="athleteStats" class="ui form hide">
+  <label id="date"></label>
+  <div class="disabled three fields">
+    <div class="field">
+      <label>Push Ups</label>
+      <input id="pushups" type="text" name="pushups" value="">
+    </div>
+    <div class="field">
+      <label>V-Ups</label>
+      <input id="vups" type="text" name="vups" value="">
+    </div>
+    <div class="field">
+      <label>Leg Lifts</label>
+      <input id="leglifts" type="text" name="leglifts" value="">
+    </div>
+  </div>
+  <div class="disabled two fields">
+    <div class="field">
+      <label>Rope Climb</label>
+      <input id="rope" type="text" name="rope" value="">
+    </div>
+    <div class="field">
+      <label>Handstand Hold</label>
+      <input id="handstand" type="text" name="handstand" value="">
+    </div>
+  </div>
+  <div id="statNotes" class="disabled field">
+    <label>Notes</label>
+    <textarea id="notes" name="notes"></textarea>
+  </div>
+  <div id="editStats" class="ui toggle checkbox hide">
+    <input type="checkbox" tabindex="0">
+    <label id="editLabel">Edit</label>
+  </div>
+  <br>
+  <button onclick="submitData()" id="updateBtn" class="ui primary button hide" type="button" name="update">Save</button>
+</div>
+
+<div id="addNewContainer" class="ui segment hide">
+  <form id="addNewForm" class="ui form addNew" method="post">
+    <label class="ui green huge label">Add New Stats</label>
+    <div class="field">
+      <label>Date:</label>
+      <input type="date" name="date">
+    </div>
+    <div class="field">
+      <label>Push Ups:</label>
+      <input type="text" name="pushups" placeholder="Push Ups">
+    </div>
+    <div class="field">
+      <label>Leg Lifts:</label>
+      <input type="text" name="leglifts" placeholder="Leg Lifts">
+    </div>
+    <div class="field">
+      <label>V-Ups:</label>
+      <input type="text" name="vups" placeholder="V-Ups">
+    </div>
+    <div class="field">
+      <label>Rope Climb</label>
+      <input type="text" name="rope" placeholder="Rope Climb">
+    </div>
+    <div class="field">
+      <label>Handstand Hold</label>
+      <input type="text" name="handstand" placeholder="Handstand Hold">
+    </div>
+    <div class="field">
+      <label>Notes:</label>
+      <textarea name="notes" rows="8" style="width: 100%;"></textarea>
+    </div>
+    <button class="ui primary button">Submit</button>
+  </form>
+</div>
+
+  <div id="rightRail" class="ui right rail hide">
+    <div class="ui segment center aligned">
+      <h3 class="ui blue large label">Athlete Stat Entries</h3>
+      <div class="ui animated list" id="athleteArchive">
+
+      </div>
+      <button id="addNewBtn" class="ui button">Add New</button>
+    </div>
+  </div>
+</div>
+
+<% include partials/footer %>
+<script>
+
+document.getElementById("addNewBtn").addEventListener("click", addNewStat);
+
+var stats = <%- JSON.stringify( stats ) %>;                                 //array of all the stats
+var athlete = <%- JSON.stringify( athletes ) %>;                            //array of all the athletes
+var types = ["pushups", "leglifts", "vups", "rope", "handstand", "notes"];  //array of the types of stats
+var statId = [];
+var pUps = [];
+var lLifts = [];
+var vUps = [];
+var rClimb = [];
+var hHold = [];
+var months = [];
+var note = [];
+
+//The oldStats variable holds the current monmth's stats, used for the cancel button
+var oldStats = [];
+
+//the currentStatId variable is defined when the user clicks one of the months for stats
+var currentStatId;
+
+var currentAthlete;
+
+//This loop creates arrays of each type of stat/id/note
+stats.forEach(function(stat) {
+  statId.unshift(stat._id);
+  pUps.unshift(stat.pushups);
+  lLifts.unshift(stat.leglifts);
+  vUps.unshift(stat.vups);
+  rClimb.unshift((stat.rope) * .1);
+  hHold.unshift(stat.handstand);
+  months.push(stat.date.split(" ")[0]);
+  note.unshift(stat.notes);
+});
+
+//This is the toggle checkbox for editing stats
+  $('.ui.checkbox').checkbox({
+    //Called when switched on and allows for editing
+    onChecked: function() {
+      document.getElementById("editLabel").innerHTML = "Cancel";              //Changes the toggle switch label to 'cancel'
+      document.getElementById("updateBtn").classList.remove("hide");          //Reveals the "submit" button
+
+      //Loops through the current stats and holds them in the oldSats array
+      //Used when "canceling"
+      for (i=0; i<types.length; i++) {
+        var x = document.getElementById(types[i]).value;
+        oldStats.push(x);
+      }
+
+      var element = document.getElementsByClassName("fields");                //Selects all divs with the class "fields"
+      document.getElementById("statNotes").classList.remove("disabled");      //Makes the notes section enabled
+
+      //Loops through the "fields" and enables them
+      for (i=2; i < element.length; i++) {
+        element[i].classList.remove("disabled");
+      }
+
+    },
+
+    //Called when edit toggle is switched off and disallows editing
+    onUnchecked: function() {
+      document.getElementById("editLabel").innerHTML = "Edit";                //Changes the toggle switch lable to "edit"
+      document.getElementById("updateBtn").classList.add("hide");             //Hides the "submit" button
+
+      var element = document.getElementsByClassName("fields");                //Selects all divs with the class "fields"
+      document.getElementById("statNotes").classList.add("disabled");         //Disables the Notes field
+
+      //Loops through the fields and replaces values with the oldStats
+      for(i=0; i < types.length; i++) {
+        document.getElementById(types[i]).value = oldStats[i];
+      }
+
+      //Loops through the fields and disables them
+      for (i=2; i < element.length; i++) {
+        element[i].classList.add("disabled");
+      }
+    }
+  });
+
+  //These are the radio checkboxes for choosing an athlete
+  $('.ui.radio.checkbox').checkbox({
+
+      // Function callback when an athlete is clicked
+      onChecked: function() {
+        var athleteClicked = this.value;                                      //Holds the athlete named that was clicked
+        document.getElementById("rightRail").classList.remove("hide");        //Reveals the right rail
+
+        document.getElementById("athleteArchive").innerHTML = "";             //Removes text from the right rail, important when switchinhg athletes
+        document.getElementById("editStats").classList.add("hide");           //Hides the "edit" toggle switch
+        document.getElementById("date").classList.add("hide");                //Hides the date label
+        document.getElementById("athleteStats").classList = "ui form hide";   //Adds the Semantic form classes, removes styling
+        document.getElementById("addNewContainer").classList.add("hide");
+        document.getElementById("addNewForm").action = "";
+
+        $('#editStats').checkbox('uncheck');                                  //Unchecks the "edit" toggle switch
+
+        //Loops through the fields and removes the stats
+        for (i=0; i < types.length; i++) {
+          document.getElementById(types[i]).value = "";
+        }
+
+        //This function and variable looks through the athlete array
+        //and finds the name that was clicked
+        function findAthleteId(n) {
+          return n.name === athleteClicked;
+        }
+        var foundAthlete = athlete.find(findAthleteId);
+
+        currentAthlete = foundAthlete._id;
+
+        document.getElementById("athleteImg").src = foundAthlete.image;       //Displays the selected athlete's image at the top
+        //This function and variable looks through the stats arrays
+        //and finds the athlete id using the variable from the above
+        //function. It then grabs all the stats from that athlete.
+        function findStats(name) {
+          return name.athlete === foundAthlete._id;
+        }
+        var foundStats = stats.filter(findStats);
+
+        document.getElementById("chosenAthlete").innerHTML = this.value;      //Displays the name of the athlete that was clicked
+        document.getElementById("athleteAge").value = foundAthlete.age;       //Displays the age of the clicked athlete
+        document.getElementById("athleteLvl").value = foundAthlete.level;     //Displays the level fo the athlete clicked
+
+        //Loops through all the stats for the athlete that was selected and displays them on them
+        //right rail by month/year
+        for (i=0; i < foundStats.length; i++) {
+
+          //Creates divs for each month of stats. Note the "dateClick" function that is called and sends the id of the
+          //selected month
+          document.getElementById("athleteArchive").innerHTML += "<div id='" + foundStats[i]._id + "' onclick='dateClick(this.id)' class='item' data-method='uncheck'>" + foundStats[i].date.split(" ")[0] + " " + foundStats[i].date.split(" ")[2] + "</div>";
+        }
+      }
+  })
+
+//This function is called when one of the months is clicked and pulls up stats for that month
+function dateClick(id) {
+  console.log(id);
+  document.getElementById("editStats").classList.remove("hide");              //Reveals "edit" toggle switch
+  document.getElementById("addNewContainer").classList.add("hide");
+  document.getElementById("addNewForm").action = "";
+
+  $('#editStats').checkbox('uncheck');                                        //Ensures that the "edit" toggle switch is unchecked
+
+  //This function and variable looks through the stats array
+  //and finds the entry for the id/month that was clicked
+  function findStats(date) {
+    return date._id === id;
+    }
+    var foundStats = stats.find(findStats);
+
+
+    var statArray = [foundStats.pushups,                                      //Creates an array of the stats for the selected month
+                     foundStats.leglifts,
+                     foundStats.vups,
+                     foundStats.rope,
+                     foundStats.handstand,
+                     foundStats.notes];
+
+    currentStatId = foundStats._id;                                           //Defines the the variable for the clicked month/id
+
+    //Loops through the fields by type and inserts the stats fo the month
+    //clicked
+    for (i=0; i < types.length; i++) {
+        document.getElementById(types[i]).value = statArray[i];
+    }
+
+    document.getElementById("date").innerHTML = foundStats.date;              //Inserts the date into the Date label
+    document.getElementById("date").classList = "ui big red label";           //Adds styling to Date label
+    document.getElementById("athleteStats").classList = "ui raised blue segment form";  //Adds styling to the form field
+}
+
+//This functions is called when the "submit" button is clicked
+//Sends the form data to app.js
+function submitData() {
+
+  var formData = new FormData();                                              //Creates a new Form Data variable
+
+  formData.append("_id", currentStatId);                                      //Adds the selected month's id to the form data
+
+  //Loops through the types of stats and inserts the values
+  //into the form data
+  for (i=0; i < types.length; i++) {
+    var input = document.getElementById(types[i]).value;
+    formData.append(types[i], input);
+  }
+
+  var element = document.getElementsByClassName("fields");                    //Creates an array of all the fields
+  document.getElementById("statNotes").classList.add("disabled");             //Disables Notes textarea
+  document.getElementById("updateBtn").classList.add("hide");                 //Hides the submit button (after clicked)
+
+  //Loops through the fields and disables them
+  for (i=2; i < element.length; i++) {
+    element[i].classList.add("disabled");
+  }
+
+  $('#editStats').checkbox('uncheck');                                        //Unchecks the "edit" toggle switch
+
+  var request = new XMLHttpRequest();                                         //Creates a new request
+  request.open("PUT", "/update");                                             //Opens a "put" request
+  request.send(formData);                                                     //Sends the formData to app.js
+}
+
+function addNewStat() {
+  document.getElementById("addNewForm").action = "/addnew/" + currentAthlete;
+  document.getElementById("addNewContainer").classList.remove("hide");
+
+  document.getElementById("editStats").classList.add("hide");           //Hides the "edit" toggle switch
+  document.getElementById("date").classList.add("hide");                //Hides the date label
+  document.getElementById("athleteStats").classList = "ui form hide";   //Adds the Semantic form classes, removes styling
+
+  $('#editStats').checkbox('uncheck');                                  //Unchecks the "edit" toggle switch
+}
+
+</script>

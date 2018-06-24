@@ -1,0 +1,228 @@
+<% include partials/header %>
+
+<%# This where we display the current athlete's profile info: Name, age, level, and picture %>
+  <div class="ui items athleteProfile">
+    <div class="item">
+      <div class="ui small image">
+        <img src="<%= athlete.image %>">
+      </div>
+      <div class="content" style="vertical-align: middle;">
+        <div class="header"><%= athlete.name %></div>
+        <div class="meta">
+          <span class="age">Age: <%= athlete.age %></span><br>
+          <span class="level">Level: <%= athlete.level %></span>
+        </div>
+        <div class="description">
+          <button onclick="goback()" class="ui mini blue button"><i class="arrow alternate circle left icon"></i>Go Back</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <%# This where the graph is displayed %>
+    <%# ----------------------------------------- %>
+    <div style="width: 70%; height: 600px; margin: auto;"><canvas id="myChart" width="100%"></canvas></div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+    <script>
+      function goback() {
+        window.location = "/";
+      }
+
+      // Variables to control what goes into the graph
+      var ctx = document.getElementById("myChart").getContext('2d');
+      var editClicked = false;
+      var athlete = <%- JSON.stringify( athlete.name ) %>;
+      var stats = <%- JSON.stringify( stats ) %>;
+      var statId = [];
+      var pUps = [];
+      var lLifts = [];
+      var vUps = [];
+      var rClimb = [];
+      var hHold = [];
+      var months = [];
+      var notes = [];
+      var statArray = ["pushups", "leglifts", "vups", "rope", "handstand"];
+
+      stats.forEach(function(stat) {
+        statId.unshift(stat._id);
+        pUps.unshift(stat.pushups);
+        lLifts.unshift(stat.leglifts);
+        vUps.unshift(stat.vups);
+        rClimb.unshift((stat.rope) * .1);
+        hHold.unshift(stat.handstand);
+        months.push(stat.date.split(" ")[0]);
+        notes.push(stat.notes);
+      });
+
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+        labels: months.reverse(),
+        datasets: [{
+            data: pUps,
+            label: "Pushups",
+            borderColor: "#3e95cd",
+            fill: false
+          }, {
+            data: lLifts,
+            label: "Leg Lifts",
+            borderColor: "#8e5ea2",
+            fill: false
+          }, {
+            data: vUps,
+            label: "V-Ups",
+            borderColor: "green",
+            fill: false
+          }, {
+            data: hHold,
+            label: "Handstand Hold",
+            borderColor: "red",
+            fill: false
+          }, {
+            data: rClimb,
+            label: "Rope Climb",
+            borderColor: "orange",
+            fill: false
+          }
+        ]
+      },
+      options: {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                      var ropeLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                          ropeLabel += ': ';
+                      }
+                      label += Math.round(tooltipItem.yLabel * 100) / 100;
+                      ropeLabel += Math.round(tooltipItem.yLabel * 100) / 1000;
+                      if (label.split(" ")[0] == "Handstand") {
+                        return label + " seconds"
+                      } else if (label.split(" ")[0] == "Rope") {
+                        return ropeLabel + " Full Rope Climbs";
+                      } else {
+                        return label;
+                      }
+
+                  }
+          }
+        },
+        title: {
+          display: true,
+          text: 'Overall strength stats for ' + athlete
+        }
+      }
+      });
+
+      // function hoverEdit(event) {
+      //   var x = event.target.getElementsByTagName("i");
+      //   x[0].classList = "save large icon";
+      // }
+
+    </script>
+    <h4 class="ui horizontal divider huge header">
+      <%# <i class="certificate icon"></i> %>
+      Personal Bests
+    </h4>
+
+    <div class="ui grid center aligned">
+      <div class="five wide column">
+        <i class="trophy icon"></i>
+        Push Ups
+        <p class="best"></p>
+      </div>
+      <div class="five wide column">
+        <i class="trophy icon"></i>
+        Leg Lifts
+        <p class="best"></p>
+      </div>
+      <div class="five wide column">
+        <i class="trophy icon"></i>
+        V-Ups
+        <p class="best"></p>
+      </div>
+      <div class="eight wide column">
+        <i class="trophy icon"></i>
+        Rope Climb
+        <p class="best"></p>
+      </div>
+      <div class="eight wide column">
+        <i class="trophy icon"></i>
+        Handstand Hold
+        <p class="best"></p>
+      </div>
+    </div>
+    <%# Use a tab system to show different dates. %>
+    <h4 class="ui horizontal divider huge header">
+      <%# <i class="calendar icon"></i> %>
+      Archive
+    </h4>
+    <%# This chunk of code displays all the content for each month %>
+    <div class="ui basic segment">
+      <div class="ui grid container">
+          <% stats.forEach(function(stats) {
+            if (stats.notes) {var notes = "<p><strong>Notes: </strong><span>" + stats.notes + "</span></p>"} else {var notes = ""}; %>
+            <div class="eight wide column raised">
+                  <div class="ui raised segment">
+                    <a class="statBox ui red ribbon large label" style="margin-bottom: 20px;"><%= stats.date.split(" ")[0] + " " + stats.date.split(" ")[2] %></a>
+                    <p><strong>Pushups:</strong><span id="pushups"> <%= stats.pushups %></span></p>
+                    <p><strong>Leg Lifts:</strong><span id="leglifts"> <%= stats.leglifts %></span></p>
+                    <p><strong>V-Ups:</strong><span id="vups"> <%= stats.vups %></span></p>
+                    <p><strong>Rope Climb:</strong><span id="rope"> <%= stats.rope %>%</span></p>
+                    <p><strong>Handstand Hold:</strong><span id="handstand"> <%= stats.handstand %> seconds</span></p>
+                    <%- notes %>
+                  </div>
+            </div>
+        <% }) %>
+      </div>
+  </div>
+
+
+
+<%# The form that allow for you to add new stats %>
+
+<script>
+  var bestArray = [pUps, lLifts, vUps, rClimb, hHold];
+
+  for (i=0; i < bestArray.length; i++) {
+    bestArray[i].sort(function(a, b) {
+      return b - a;
+    })
+  }
+
+  // pUps.sort(function(a, b){
+  //   return b - a;
+  // })
+
+  var best = document.getElementsByClassName("best");
+
+  for (i=0; i < best.length; i++) {
+    if (i == 4) {
+      best[i].innerHTML = bestArray[i][0] + " seconds";
+    } else if (i == 3) {
+      best[i].innerHTML = bestArray[i][0] * 10 + "%";
+    }
+    else {
+      best[i].innerHTML = bestArray[i][0];
+    }
+    console.log(bestArray[0].name);
+  }
+  // for (i=0; i < x.length; i++) {
+  //     x[i].addEventListener("mouseover", function() {
+  //       var saveIcon = this.getElementsByTagName("i")[0];
+  //       if (editClicked == false) {
+  //           saveIcon.classList = "edit large icon show";
+  //       }
+  //     })
+  //     x[i].addEventListener("mouseout", function() {
+  //       var editIcon = this.getElementsByTagName("i")[0];
+  //       if (editClicked == false) {
+  //           editIcon.classList = "edit large icon hide";
+  //       }
+  //     })
+  // }
+</script>
+<% include partials/footer %>
