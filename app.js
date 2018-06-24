@@ -79,8 +79,8 @@ app.get("/athlete/:id", function(req, res){
     });
 });
 
+//Adds new stats
 app.post("/addnew/:id", function(req, res) {
-    // console.log(moment(req.body.date).format("MMMM Do YYYY"));
     Strength.create({
       date: moment(req.body.date).format("MMMM Do YYYY"),
       athlete: req.params.id,
@@ -99,7 +99,7 @@ app.post("/addnew/:id", function(req, res) {
     })
 });
 
-app.get("/new", function(req, res) {
+app.get("/new", isLoggedIn, function(req, res) {
   res.render("new");
 });
 
@@ -121,7 +121,7 @@ app.post("/new/add", function(req, res) {
   });
 });
 
-app.get("/register", function(req, res){
+app.get("/register", isLoggedIn, function(req, res){
   res.render("register");
 })
 
@@ -172,7 +172,7 @@ app.put("/update", upload.any(), function(req, res) {
       });
 });
 
-app.get("/update", function(req, res) {
+app.get("/update", isLoggedIn, function(req, res) {
   Athlete.find({}, function(err, athletes){
     if (err){
       console.log(err)

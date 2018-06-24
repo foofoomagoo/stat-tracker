@@ -112,7 +112,8 @@
         },
         title: {
           display: true,
-          text: 'Overall strength stats for ' + athlete
+          fontSize: 24,
+          text: 'Overall strength stats for ' + athlete.split(" ")[0]
         }
       }
       });
@@ -123,12 +124,12 @@
       // }
 
     </script>
-    <h4 class="ui horizontal divider huge header">
-      <%# <i class="certificate icon"></i> %>
-      Personal Bests
-    </h4>
 
-    <div class="ui grid center aligned">
+    <div id="personalBest" class="ui grid center aligned">
+      <h4 class="ui horizontal divider huge header">
+        <%# <i class="certificate icon"></i> %>
+        Personal Bests
+      </h4>
       <div class="five wide column">
         <i class="trophy icon"></i>
         Push Ups
@@ -193,10 +194,6 @@
     })
   }
 
-  // pUps.sort(function(a, b){
-  //   return b - a;
-  // })
-
   var best = document.getElementsByClassName("best");
 
   for (i=0; i < best.length; i++) {
@@ -210,19 +207,5 @@
     }
     console.log(bestArray[0].name);
   }
-  // for (i=0; i < x.length; i++) {
-  //     x[i].addEventListener("mouseover", function() {
-  //       var saveIcon = this.getElementsByTagName("i")[0];
-  //       if (editClicked == false) {
-  //           saveIcon.classList = "edit large icon show";
-  //       }
-  //     })
-  //     x[i].addEventListener("mouseout", function() {
-  //       var editIcon = this.getElementsByTagName("i")[0];
-  //       if (editClicked == false) {
-  //           editIcon.classList = "edit large icon hide";
-  //       }
-  //     })
-  // }
 </script>
 <% include partials/footer %>
