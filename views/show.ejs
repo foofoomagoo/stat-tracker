@@ -133,27 +133,27 @@
       <div class="five wide column">
         <i class="trophy icon"></i>
         Push Ups
-        <p class="best"></p>
+        <p class="best"> in 30 seconds</p>
       </div>
       <div class="five wide column">
         <i class="trophy icon"></i>
         Leg Lifts
-        <p class="best"></p>
+        <p class="best"> in 30 seconds</p>
       </div>
       <div class="five wide column">
         <i class="trophy icon"></i>
         V-Ups
-        <p class="best"></p>
+        <p class="best"> in 30 seconds</p>
       </div>
       <div class="eight wide column">
         <i class="trophy icon"></i>
         Rope Climb
-        <p class="best"></p>
+        <p class="best"><strong>%</strong></p>
       </div>
       <div class="eight wide column">
         <i class="trophy icon"></i>
         Handstand Hold
-        <p class="best"></p>
+        <p class="best"> seconds</p>
       </div>
     </div>
     <%# Use a tab system to show different dates. %>
@@ -197,15 +197,11 @@
   var best = document.getElementsByClassName("best");
 
   for (i=0; i < best.length; i++) {
-    if (i == 4) {
-      best[i].innerHTML = bestArray[i][0] + " seconds";
-    } else if (i == 3) {
-      best[i].innerHTML = bestArray[i][0] * 10 + "%";
-    }
-    else {
-      best[i].innerHTML = bestArray[i][0];
-    }
-    console.log(bestArray[0].name);
+      if (bestArray[3]) {
+        rClimb[i] = rClimb[i] * 10;
+      }
+      best[i].insertAdjacentHTML('afterbegin', "<strong>" + bestArray[i][0] + "</strong>")
+      // best[i].innerHTML -= bestArray[i][0];
   }
 </script>
 <% include partials/footer %>
