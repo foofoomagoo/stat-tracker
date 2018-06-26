@@ -184,6 +184,33 @@ app.get("/update", isLoggedIn, function(req, res) {
   })
 })
 
+app.get("/update/athlete", function(req, res) {
+  Athlete.find({}, function(err, athletes){
+    if (err){
+      console.log(err)
+    }else {
+      res.render("change", {athletes:athletes})
+    }
+  })
+})
+
+app.put("/update/athlete", upload.any(), function(req, res) {
+  Athlete.findByIdAndUpdate(req.body._id, {
+        "name": req.body.name,
+        "level": req.body.level,
+        "image": req.body.image,
+        "age": req.body.age
+    }, function(err, updatedAthlete) {
+          if (err) {
+              console.log("Oops, didn't work!");
+              console.log(err);
+          }
+          else {
+              res.redirect("/update")
+          }
+      });
+})
+
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();

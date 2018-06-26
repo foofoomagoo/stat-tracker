@@ -1,0 +1,77 @@
+<% include partials/header %>
+
+<div id="selectAthlete" class="ui form">
+  <div class="field" style="text-align: center;">
+    <label class="ui yellow massive label">Change an Athlete's Info</label>
+    <select id="athlete">
+      <option value="">Select an Athlete</option>
+      <% athletes.forEach(function(athlete) { %>
+          <option value="<%= athlete._id %>"><%= athlete.name %></option>
+      <% }) %>
+    </select>
+  </div>
+</div>
+<div id="changeAthlete" class="ui form hide">
+  <div class="field">
+    <label>Name</label>
+    <input id="name" type="text" name="" value="">
+  </div>
+  <div class="field">
+    <label>Age</label>
+    <input id="age" type="text" name="" value="">
+  </div>
+  <div class="field">
+    <label>Level</label>
+    <input id="level" type="text" name="" value="">
+  </div>
+  <div class="field">
+    <label>Image Path</label>
+    <input id="image" type="text" name="" value="">
+  </div>
+  <button onclick="submitChange()" class="ui primary button" type="button" name="button">Submit</button>
+</div>
+</div>
+
+<% include partials/footer %>
+
+<script type="text/javascript">
+  var info = ["name", "age", "level", "image"];
+  var athlete = <%- JSON.stringify( athletes ) %>;
+  var select = document.getElementById("athlete");
+  var foundAthlete;
+
+  select.onchange = function(){
+    var input = document.getElementById("name").value;
+    if (!input){
+      document.getElementById("changeAthlete").classList.remove("hide");
+    }
+    var selectedString = select.options[select.selectedIndex].value;
+
+    function findAthleteId(n) {
+      return n._id === selectedString;
+    }
+    foundAthlete = athlete.find(findAthleteId);
+    var stats = [foundAthlete.name, foundAthlete.age, foundAthlete.level, foundAthlete.image];
+
+    for (i=0; i < info.length; i++) {
+      document.getElementById(info[i]).value = stats[i];
+    }
+  }
+
+  function submitChange() {
+    var formData = new FormData();                                              //Creates a new Form Data variable
+
+    formData.append("_id", foundAthlete._id);
+
+    for (i=0; i < info.length; i++) {
+      var input = document.getElementById(info[i]).value;
+      formData.append(info[i], input);
+    }
+
+    var request = new XMLHttpRequest();                                         //Creates a new request
+    request.open("PUT", "/update/athlete");                                     //Opens a "put" request
+    request.send(formData);
+
+    window.setTimeout(function(){ window.location = "/update"; },1000);
+  }
+</script>

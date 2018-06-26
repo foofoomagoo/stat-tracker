@@ -191,3 +191,13 @@ i.large.icon:hover {
 #personalBest div {
   font-size: 18px;
 }
+
+#selectAthlete {
+  width: 40%;
+  margin: 50px auto;
+}
+
+#changeAthlete {
+  width: 40%;
+  margin: 20px auto;
+}
