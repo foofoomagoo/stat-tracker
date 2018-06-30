@@ -13,7 +13,8 @@ var express               = require("express"),
     upload                = multer();
 
 var app = express();
-mongoose.connect("mongodb://localhost:27017/mydb");
+// mongoose.connect("mongodb://localhost:27017/mydb");
+mongoose.connect("mongodb://scott:kiwano1@ds131742.mlab.com:31742/gymstats");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
