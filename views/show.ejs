@@ -98,7 +98,7 @@
                           ropeLabel += ': ';
                       }
                       label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      ropeLabel += Math.round(tooltipItem.yLabel * 100) / 1000;
+                      ropeLabel += Math.round(tooltipItem.yLabel * 10) / 1000;
                       if (label.split(" ")[0] == "Handstand") {
                         return label + " seconds"
                       } else if (label.split(" ")[0] == "Rope") {
