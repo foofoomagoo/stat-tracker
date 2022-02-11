@@ -1,0 +1,89 @@
+{"_id":{"$oid":"5b1da800d7c2d758acca2e97"},"date":"January 3rd 2018","athlete":"5b1c6108e3d47653102b6092","pushups":36,"vups":38,"leglifts":12,"rope":100,"handstand":4.76,"notes":"","__v":0}
+{"_id":{"$oid":"5b1da8f0ad45304c449c9fea"},"date":"February 5th 2018","athlete":"5b1c6108e3d47653102b6092","pushups":40,"vups":37,"leglifts":12,"rope":300,"handstand":6,"notes":"","__v":0}
+{"_id":{"$oid":"5b1f22403c2bfd2c98aaa017"},"date":"March 5th 2018","athlete":"5b1c6108e3d47653102b6092","pushups":46,"vups":35,"leglifts":13,"rope":100,"handstand":10.42,"notes":"","__v":0}
+{"_id":{"$oid":"5b1f3b7b2d657960cc93394e"},"date":"April 2nd 2018","athlete":"5b1c6108e3d47653102b6092","pushups":44,"vups":40,"leglifts":14,"rope":100,"handstand":15.2,"notes":"","__v":0}
+{"_id":{"$oid":"5b1f3c334dd77e4a8457749d"},"date":"June 4th 2018","athlete":"5b1c6108e3d47653102b6092","pushups":21,"vups":34,"leglifts":15,"rope":50,"handstand":9.97,"notes":"","__v":0}
+{"_id":{"$oid":"5b206ff741e7e25c1c90a87b"},"date":"January 3rd 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":36,"vups":38,"leglifts":12,"rope":100,"handstand":4.76,"notes":"","__v":0}
+{"_id":{"$oid":"5b20701c41e7e25c1c90a87c"},"date":"February 5th 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":26,"vups":32,"leglifts":10,"rope":125,"handstand":3,"notes":"","__v":0}
+{"_id":{"$oid":"5b20703841e7e25c1c90a87d"},"date":"March 5th 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":41,"vups":32,"leglifts":11,"rope":100,"handstand":4,"notes":"","__v":0}
+{"_id":{"$oid":"5b20707b41e7e25c1c90a87e"},"date":"April 2nd 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":53,"vups":36,"leglifts":10,"rope":150,"handstand":3.75,"notes":"","__v":0}
+{"_id":{"$oid":"5b20712d6e462b2fb401e7c5"},"date":"December 4th 2017","athlete":"5b1c67d83f25192c30ecd6a9","pushups":37,"vups":37,"leglifts":13,"rope":150,"handstand":22,"notes":"","__v":0}
+{"_id":{"$oid":"5b20715b6e462b2fb401e7c6"},"date":"January 3rd 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":39,"vups":40,"leglifts":13,"rope":125,"handstand":32.56,"notes":"","__v":0}
+{"_id":{"$oid":"5b20717d6e462b2fb401e7c7"},"date":"February 5th 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":38,"vups":38,"leglifts":13,"rope":250,"handstand":4,"notes":"","__v":0}
+{"_id":{"$oid":"5b2071a06e462b2fb401e7c8"},"date":"March 5th 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":40,"vups":41,"leglifts":15,"rope":200,"handstand":9.13,"notes":"","__v":0}
+{"_id":{"$oid":"5b2071c26e462b2fb401e7c9"},"date":"April 2nd 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":39,"vups":42,"leglifts":15,"rope":160,"handstand":22.33,"notes":"","__v":0}
+{"_id":{"$oid":"5b2072316e462b2fb401e7ca"},"date":"December 4th 2017","athlete":"5b1c681054f151334cb95293","pushups":31,"vups":28,"leglifts":15,"rope":100,"handstand":3.83,"notes":"","__v":0}
+{"_id":{"$oid":"5b2072586e462b2fb401e7cb"},"date":"January 3rd 2018","athlete":"5b1c681054f151334cb95293","pushups":36,"vups":32,"leglifts":14,"rope":90,"handstand":6.92,"notes":"","__v":0}
+{"_id":{"$oid":"5b2072786e462b2fb401e7cc"},"date":"February 5th 2018","athlete":"5b1c681054f151334cb95293","pushups":32,"vups":32,"leglifts":15,"rope":90,"handstand":5.77,"notes":"","__v":0}
+{"_id":{"$oid":"5b2072c26e462b2fb401e7cd"},"date":"April 2nd 2018","athlete":"5b1c681054f151334cb95293","pushups":45,"vups":39,"leglifts":16,"rope":115,"handstand":10.4,"notes":"","__v":0}
+{"_id":{"$oid":"5b207a4828b93d5190ff30bb"},"date":"December 4th 2017","athlete":"5b2079b24e95713ae009a4de","pushups":26,"vups":31,"leglifts":10,"rope":10,"handstand":1.78,"notes":"Legs not all the way up on leg lifts.","__v":0}
+{"_id":{"$oid":"5b207aa984a73f63e8e686d3"},"date":"January 3rd 2018","athlete":"5b2079b24e95713ae009a4de","pushups":25,"vups":35,"leglifts":7,"rope":15,"handstand":2.63,"notes":"","__v":0}
+{"_id":{"$oid":"5b207b3784a73f63e8e686d5"},"date":"February 5th 2018","athlete":"5b2079b24e95713ae009a4de","pushups":18,"vups":22,"leglifts":7,"rope":15,"handstand":2.83,"notes":"","__v":0}
+{"_id":{"$oid":"5b207b5a84a73f63e8e686d6"},"date":"March 5th 2018","athlete":"5b2079b24e95713ae009a4de","pushups":26,"vups":35,"leglifts":9,"rope":13,"handstand":3.35,"notes":"","__v":0}
+{"_id":{"$oid":"5b207b8d84a73f63e8e686d7"},"date":"April 2nd 2018","athlete":"5b2079b24e95713ae009a4de","pushups":24,"vups":35,"leglifts":13,"rope":25,"handstand":3.98,"notes":"","__v":0}
+{"_id":{"$oid":"5b207d5322f88060f4ec5f48"},"date":"December 4th 2017","athlete":"5b207d2022f88060f4ec5f47","pushups":29,"vups":25,"leglifts":11,"rope":20,"handstand":3,"notes":"","__v":0}
+{"_id":{"$oid":"5b207d7a22f88060f4ec5f49"},"date":"January 3rd 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":22,"vups":33,"leglifts":9,"rope":22,"handstand":2.36,"notes":"","__v":0}
+{"_id":{"$oid":"5b207dd822f88060f4ec5f4a"},"date":"February 5th 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":19,"vups":20,"leglifts":11,"rope":25,"handstand":3.35,"notes":"","__v":0}
+{"_id":{"$oid":"5b207df822f88060f4ec5f4b"},"date":"March 5th 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":31,"vups":29,"leglifts":10,"rope":38,"handstand":3.88,"notes":"","__v":0}
+{"_id":{"$oid":"5b207f025f2d4963a89a8385"},"date":"April 2nd 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":25,"vups":32,"leglifts":12,"rope":25,"handstand":5.65,"notes":"","__v":0}
+{"_id":{"$oid":"5b208053f29e8049749ade36"},"date":"December 4th 2017","athlete":"5b208020f29e8049749ade35","pushups":23,"vups":18,"leglifts":8,"rope":10,"handstand":1.62,"notes":"Bent knees on leg lifts.","__v":0}
+{"_id":{"$oid":"5b208079f29e8049749ade37"},"date":"January 3rd 2018","athlete":"5b208020f29e8049749ade35","pushups":16,"vups":26,"leglifts":5,"rope":15,"handstand":3.66,"notes":"","__v":0}
+{"_id":{"$oid":"5b20809cf29e8049749ade38"},"date":"February 5th 2018","athlete":"5b208020f29e8049749ade35","pushups":13,"vups":22,"leglifts":12,"rope":50,"handstand":2.4,"notes":"","__v":0}
+{"_id":{"$oid":"5b2080c0f29e8049749ade39"},"date":"March 5th 2018","athlete":"5b208020f29e8049749ade35","pushups":23,"vups":24,"leglifts":10,"rope":66,"handstand":3.99,"notes":"","__v":0}
+{"_id":{"$oid":"5b2080def29e8049749ade3a"},"date":"April 2nd 2018","athlete":"5b208020f29e8049749ade35","pushups":22,"vups":23,"leglifts":10,"rope":50,"handstand":3.6,"notes":"","__v":0}
+{"_id":{"$oid":"5b20816af29e8049749ade3c"},"date":"December 4th 2017","athlete":"5b208139f29e8049749ade3b","pushups":28,"vups":26,"leglifts":12,"rope":75,"handstand":2.32,"notes":"","__v":0}
+{"_id":{"$oid":"5b208190f29e8049749ade3d"},"date":"January 3rd 2018","athlete":"5b208139f29e8049749ade3b","pushups":26,"vups":30,"leglifts":10,"rope":50,"handstand":1.64,"notes":"Low arms on v-ups.","__v":0}
+{"_id":{"$oid":"5b2081aef29e8049749ade3e"},"date":"February 5th 2018","athlete":"5b208139f29e8049749ade3b","pushups":33,"vups":26,"leglifts":10,"rope":50,"handstand":3.17,"notes":"","__v":0}
+{"_id":{"$oid":"5b2081d4f29e8049749ade3f"},"date":"March 5th 2018","athlete":"5b208139f29e8049749ade3b","pushups":41,"vups":37,"leglifts":12,"rope":50,"handstand":2.68,"notes":"","__v":0}
+{"_id":{"$oid":"5b2081eef29e8049749ade40"},"date":"April 2nd 2018","athlete":"5b208139f29e8049749ade3b","pushups":32,"vups":33,"leglifts":14,"rope":150,"handstand":7.48,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a01297a05b460c85ad8a"},"date":"December 4th 2017","athlete":"5b219fd397a05b460c85ad89","pushups":24,"vups":22,"leglifts":12,"rope":25,"handstand":2.32,"notes":"Bent knees in leg lifts.","__v":0}
+{"_id":{"$oid":"5b21a03597a05b460c85ad8b"},"date":"April 2nd 2018","athlete":"5b219fd397a05b460c85ad89","pushups":25,"vups":28,"leglifts":10,"rope":50,"handstand":5.56,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a0a797a05b460c85ad8d"},"date":"January 3rd 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":18,"vups":28,"leglifts":7,"rope":40,"handstand":5.13,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a0dd97a05b460c85ad8e"},"date":"February 5th 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":30,"vups":24,"leglifts":12,"rope":25,"handstand":1.96,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a0fc97a05b460c85ad8f"},"date":"March 5th 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":38,"vups":39,"leglifts":12,"rope":40,"handstand":3.68,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a12097a05b460c85ad90"},"date":"April 2nd 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":34,"vups":34,"leglifts":16,"rope":50,"handstand":3.62,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a72097a05b460c85ad92"},"date":"January 3rd 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":24,"vups":23,"leglifts":15,"rope":25,"handstand":2.5,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a73d97a05b460c85ad93"},"date":"February 5th 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":18,"vups":20,"leglifts":11,"rope":25,"handstand":2.96,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a76897a05b460c85ad94"},"date":"March 5th 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":24,"vups":26,"leglifts":15,"rope":25,"handstand":3.23,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a79097a05b460c85ad95"},"date":"April 2nd 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":33,"vups":31,"leglifts":13,"rope":60,"handstand":3.98,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a8a597a05b460c85ad97"},"date":"January 3rd 2018","athlete":"5b21a87897a05b460c85ad96","pushups":11,"vups":18,"leglifts":8,"rope":0,"handstand":2.57,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a8c397a05b460c85ad98"},"date":"March 5th 2018","athlete":"5b21a87897a05b460c85ad96","pushups":15,"vups":28,"leglifts":13,"rope":25,"handstand":3.86,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a8de97a05b460c85ad99"},"date":"April 2nd 2018","athlete":"5b21a87897a05b460c85ad96","pushups":18,"vups":27,"leglifts":12,"rope":25,"handstand":6.73,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a97797a05b460c85ad9b"},"date":"January 3rd 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":28,"vups":19,"leglifts":6,"rope":50,"handstand":2.18,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a9b697a05b460c85ad9c"},"date":"February 5th 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":30,"vups":24,"leglifts":11,"rope":75,"handstand":2.61,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a9d197a05b460c85ad9d"},"date":"March 5th 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":28,"vups":28,"leglifts":13,"rope":63,"handstand":2.82,"notes":"","__v":0}
+{"_id":{"$oid":"5b21a9f097a05b460c85ad9e"},"date":"April 2nd 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":38,"vups":31,"leglifts":15,"rope":100,"handstand":6.71,"notes":"","__v":0}
+{"_id":{"$oid":"5b21aa8397a05b460c85ada0"},"date":"January 3rd 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":21,"vups":20,"leglifts":9,"rope":15,"handstand":2.28,"notes":"","__v":0}
+{"_id":{"$oid":"5b21aaa497a05b460c85ada1"},"date":"February 5th 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":25,"vups":25,"leglifts":12,"rope":12,"handstand":2.04,"notes":"","__v":0}
+{"_id":{"$oid":"5b21aac197a05b460c85ada2"},"date":"March 5th 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":26,"vups":30,"leglifts":11,"rope":50,"handstand":2.83,"notes":"","__v":0}
+{"_id":{"$oid":"5b21aadc97a05b460c85ada3"},"date":"April 2nd 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":32,"vups":32,"leglifts":14,"rope":25,"handstand":3.4,"notes":"","__v":0}
+{"_id":{"$oid":"5b21c3bc81ce8752ac4253a1"},"date":"June 13th 2018","athlete":"update","__v":0}
+{"_id":{"$oid":"5b21c41897f41b5f38c5b9d7"},"date":"June 13th 2018","athlete":"update","__v":0}
+{"_id":{"$oid":"5b21c475f569822e60ce4ff0"},"date":"June 13th 2018","athlete":"update","__v":0}
+{"_id":{"$oid":"5b21c598b5c7321c34cfeb78"},"date":"June 13th 2018","athlete":"update","__v":0}
+{"_id":{"$oid":"5b2ed938aa02f13230d7b346"},"date":"May 2nd 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":53,"vups":36,"leglifts":10,"rope":150,"handstand":3.75,"notes":"Bent knees on leg lifts","__v":0}
+{"_id":{"$oid":"5b2ed997aa02f13230d7b347"},"date":"May 2nd 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":39,"vups":42,"leglifts":15,"rope":162,"handstand":22.39,"notes":"Slight knee bend on leg lifts","__v":0}
+{"_id":{"$oid":"5b2eda073e6c371f20dc8500"},"date":"May 2nd 2018","athlete":"5b1c681054f151334cb95293","pushups":45,"vups":39,"leglifts":16,"rope":115,"handstand":10.1,"notes":"Bent knees on leg lifts","__v":0}
+{"_id":{"$oid":"5b2eda3a3e6c371f20dc8501"},"date":"May 2nd 2018","athlete":"5b2079b24e95713ae009a4de","pushups":24,"vups":35,"leglifts":13,"rope":25,"handstand":3.98,"notes":"","__v":0}
+{"_id":{"$oid":"5b2eda6a3e6c371f20dc8502"},"date":"May 2nd 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":25,"vups":32,"leglifts":12,"rope":25,"handstand":5.65,"notes":"","__v":0}
+{"_id":{"$oid":"5b2eda963e6c371f20dc8503"},"date":"May 2nd 2018","athlete":"5b208020f29e8049749ade35","pushups":22,"vups":23,"leglifts":10,"rope":50,"handstand":3.6,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edad23e6c371f20dc8504"},"date":"May 2nd 2018","athlete":"5b208139f29e8049749ade3b","pushups":32,"vups":33,"leglifts":14,"rope":150,"handstand":7.48,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edaf23e6c371f20dc8505"},"date":"May 2nd 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":34,"vups":34,"leglifts":16,"rope":50,"handstand":3.62,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edb283e6c371f20dc8506"},"date":"May 2nd 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":33,"vups":31,"leglifts":13,"rope":60,"handstand":3.98,"notes":"Perfect form!","__v":0}
+{"_id":{"$oid":"5b2edb713e6c371f20dc8507"},"date":"May 2nd 2018","athlete":"5b21a87897a05b460c85ad96","pushups":18,"vups":27,"leglifts":12,"rope":25,"handstand":6.37,"notes":"Half way up on leg lifts.\r\nBent knees on v-ups, not all the way up","__v":0}
+{"_id":{"$oid":"5b2edb9c3e6c371f20dc8508"},"date":"May 2nd 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":38,"vups":31,"leglifts":15,"rope":100,"handstand":6.71,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edbd53e6c371f20dc8509"},"date":"May 2nd 2018","athlete":"5b219fd397a05b460c85ad89","pushups":25,"vups":28,"leglifts":10,"rope":50,"handstand":3.56,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edc3e3e6c371f20dc850a"},"date":"June 4th 2018","athlete":"5b1c67bd5ae28a5190dc8470","pushups":36,"vups":35,"leglifts":10,"rope":125,"handstand":7.27,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edca33e6c371f20dc850b"},"date":"June 4th 2018","athlete":"5b1c67d83f25192c30ecd6a9","pushups":38,"vups":41,"leglifts":14,"rope":100,"handstand":25.66,"notes":"Straight legs on leg lifts!","__v":0}
+{"_id":{"$oid":"5b2edce83e6c371f20dc850c"},"date":"June 4th 2018","athlete":"5b2079b24e95713ae009a4de","pushups":26,"vups":34,"leglifts":11,"rope":15,"handstand":2.59,"notes":"Bent knees on leg lifts","__v":0}
+{"_id":{"$oid":"5b2edd263e6c371f20dc850d"},"date":"June 4th 2018","athlete":"5b207d2022f88060f4ec5f47","pushups":31,"vups":null,"leglifts":11,"rope":null,"handstand":null,"notes":"Bent knees on leg lifts.\r\nWide arms on push ups.\r\nGot to practice late, missed the others.","__v":0}
+{"_id":{"$oid":"5b2edd4a3e6c371f20dc850e"},"date":"June 4th 2018","athlete":"5b219fd397a05b460c85ad89","pushups":20,"vups":28,"leglifts":12,"rope":50,"handstand":2.79,"notes":"","__v":0}
+{"_id":{"$oid":"5b2eddb53e6c371f20dc850f"},"date":"June 4th 2018","athlete":"5b208020f29e8049749ade35","pushups":22,"vups":25,"leglifts":13,"rope":40,"handstand":3.98,"notes":"Leg lifts not all the way up.","__v":0}
+{"_id":{"$oid":"5b2edde03e6c371f20dc8510"},"date":"June 4th 2018","athlete":"5b21a95297a05b460c85ad9a","pushups":41,"vups":29,"leglifts":11,"rope":150,"handstand":4.52,"notes":"Great form on v-ups!","__v":0}
+{"_id":{"$oid":"5b2ede153e6c371f20dc8511"},"date":"June 4th 2018","athlete":"5b21a08797a05b460c85ad8c","pushups":44,"vups":41,"leglifts":18,"rope":null,"handstand":2.66,"notes":"","__v":0}
+{"_id":{"$oid":"5b2ede4b3e6c371f20dc8512"},"date":"June 4th 2018","athlete":"5b208139f29e8049749ade3b","pushups":50,"vups":41,"leglifts":16,"rope":null,"handstand":3.62,"notes":"","__v":0}
+{"_id":{"$oid":"5b2ede773e6c371f20dc8513"},"date":"June 4th 2018","athlete":"5b1c681054f151334cb95293","pushups":25,"vups":32,"leglifts":14,"rope":100,"handstand":17.62,"notes":"Dropping hips on push ups.","__v":0}
+{"_id":{"$oid":"5b2edea63e6c371f20dc8514"},"date":"June 4th 2018","athlete":"5b21a6e997a05b460c85ad91","pushups":46,"vups":33,"leglifts":15,"rope":null,"handstand":5.41,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edebf3e6c371f20dc8515"},"date":"June 4th 2018","athlete":"5b21a87897a05b460c85ad96","pushups":24,"vups":31,"leglifts":15,"rope":null,"handstand":3.73,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edf733e6c371f20dc8516"},"date":"May 2nd 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":32,"vups":32,"leglifts":14,"rope":25,"handstand":3.4,"notes":"","__v":0}
+{"_id":{"$oid":"5b2edf953e6c371f20dc8517"},"date":"June 4th 2018","athlete":"5b21aa4697a05b460c85ad9f","pushups":35,"vups":39,"leglifts":13,"rope":25,"handstand":1.93,"notes":"","__v":0}
