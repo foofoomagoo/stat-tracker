@@ -7,7 +7,6 @@ var express = require("express"),
   LocalStrategy = require("passport-local"),
   passportLocalMongoose = require("passport-local-mongoose"),
   moment = require("moment"),
-  favicon = require("serve-favicon"),
   Schema = mongoose.Schema,
   User = require("./models/users"),
   upload = multer();
