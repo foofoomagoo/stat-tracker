@@ -1,50 +1,54 @@
 <% include partials/header %>
 
-    <div class="ui raised teal center aligned segment" style="margin-top: 25px;">
-      <h2 class="ui icon header">
-        <i class="heartbeat icon"></i>
-        <div class="content">
-          Gymnast Strength Tracker
-          <div class="sub header">Track and view your athlete's strength progress.</div>
-        </div>
-      </h2>
+<div class="ui raised teal center aligned segment" style="margin-top: 25px">
+  <h2 class="ui icon header">
+    <i class="heartbeat icon"></i>
+    <div class="content">
+      Gymnast Strength Tracker
+      <div class="sub header">
+        Track and view your athlete's strength progress.
+      </div>
     </div>
+  </h2>
+</div>
 
-    <div class="ui fluid four column relaxed special cards grid">
-      <% athletes.sort(function(a, b){
-        return b.level - a.level;
-      })
-        athletes.forEach(function(athlete){ %>
-        <div class="card">
-          <div class="blurring dimmable image">
-            <div class="ui dimmer">
-              <div class="content">
-                <div class="center">
-                  <a href="/athlete/<%= athlete._id %>"><div class="ui inverted button">View Stats</div></a>
-                </div>
-              </div>
-            </div>
-          <img src="<%= athlete.image %>">
-          </div>
-          <div class="content">
-            <a href="/athlete/<%= athlete._id %>" class="header"><%= athlete.name %></a>
-            <div class="meta">
-              <span class="date">Age: <%= athlete.age %></span>
+<div class="ui fluid four column relaxed special cards grid">
+  <% athletes.sort(function(a, b){ return b.level - a.level; })
+  athletes.forEach(function(athlete){ %>
+  <div class="card">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <a href="/athlete/<%= athlete._id %>"
+              ><div class="ui inverted button">View Stats</div></a
+            >
           </div>
         </div>
-        <div class="extra content">
-          <a>
-            <i class="trophy icon"></i>
-              Level: <%= athlete.level %>
-            </a>
-        </div>
-        </div>
-      <% }) %>
+      </div>
+      <img src="<%= athlete.image %>" />
     </div>
+    <div class="content">
+      <a href="/athlete/<%= athlete._id %>" class="header"
+        ><%= athlete.name %></a
+      >
+      <div class="meta">
+        <span class="date">Age: <%= athlete.age %></span>
+      </div>
+    </div>
+    <div class="extra content">
+      <a>
+        <i class="trophy icon"></i>
+        Level: <%= athlete.level %>
+      </a>
+    </div>
+  </div>
+  <% }) %>
+</div>
 
 <% include partials/footer %>
 <script type="text/javascript">
-$('.special.cards .image').dimmer({
-  on: 'hover'
-});
+  $(".special.cards .image").dimmer({
+    on: "hover",
+  });
 </script>
