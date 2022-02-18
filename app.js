@@ -1,6 +1,7 @@
 //Declaring dependencies
 var express = require("express"),
   mongoose = require("mongoose"),
+  ejs = require("ejs"),
   bodyParser = require("body-parser"),
   multer = require("multer"),
   passport = require("passport"),
@@ -16,7 +17,7 @@ var app = express();
 // mongoose.connect("mongodb://scott:kiwano1@ds131742.mlab.com:31742/gymstats");
 mongoose.connect(
   "mongodb+srv://sawilhelm:GizMo1984@cluster0.67jmo.mongodb.net/stats?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+  { useNewUrlParser: true, useUnifiedTopology: true }
 );
 app.set("view engine", "ejs");
 app.use(express.static("public"));

@@ -1,11 +1,27 @@
-<% include partials/header %>
+<%- include ('partials/header') %>
 
-  <h1>Log In</h1>
-  <div class="loginForm">
-    <form class="ui form " action="/admin/login" method="POST">
-      <input class="form-control" type="text" name="username" placeholder="Username">
-      <input class="form-control" type="password" name="password" placeholder="Password">
-      <button class="btn btn-lg btn-primary btn-block" type="submit" name="button">Submit</button>
-    </form>
-  </div>
-<% include partials/footer %>
+<h1>Log In</h1>
+<div class="loginForm">
+  <form class="ui form" action="/admin/login" method="POST">
+    <input
+      class="form-control"
+      type="text"
+      name="username"
+      placeholder="Username"
+    />
+    <input
+      class="form-control"
+      type="password"
+      name="password"
+      placeholder="Password"
+    />
+    <button
+      class="btn btn-lg btn-primary btn-block"
+      type="submit"
+      name="button"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+<%- include ('partials/footer') %>
