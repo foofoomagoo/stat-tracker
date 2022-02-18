@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Stat tracker for gymnasts.",
   "engines": {
-    "node": "16.14.0"
+    "node": "16.14.0",
+    "start": "node app.js"
   },
   "main": "app.js",
   "scripts": {
