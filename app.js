@@ -244,6 +244,7 @@ app.get("/logout", function (req, res) {
 });
 
 // app.listen(4000, process.env.IP, function(){
-app.listen(4000, process.env.IP, function () {
+const PORT = process.env.IP || 4000;
+app.listen(PORT, () => {
   console.log("The server is up and running!");
 });
