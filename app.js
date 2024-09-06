@@ -15,8 +15,13 @@ var express = require("express"),
 var app = express();
 // mongoose.connect("mongodb://localhost:27017/mydb");
 // mongoose.connect("mongodb://scott:kiwano1@ds131742.mlab.com:31742/gymstats");
+// mongoose.connect(
+  // "mongodb+srv://sawilhelm:GizMo1984@cluster0.67jmo.mongodb.net/stats?retryWrites=true&w=majority",
+  // { useNewUrlParser: true, useUnifiedTopology: true }
+// );
+
 mongoose.connect(
-  "mongodb+srv://sawilhelm:GizMo1984@cluster0.67jmo.mongodb.net/stats?retryWrites=true&w=majority",
+  "mongodb+srv://sawilhelm:9Bvnkd%A.d8PtEw@redmothdev.c0w5ycf.mongodb.net/",
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 app.set("view engine", "ejs");
